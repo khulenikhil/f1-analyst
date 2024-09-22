@@ -1,0 +1,9 @@
+jupyter
+notebook
+fastf1
+minio
+sqlalchemy
+pandas
+ruff
+jupysql
+psycopg[binary]

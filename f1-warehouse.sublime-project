@@ -1,0 +1,12 @@
+{
+  "settings": {
+    "python": {
+      "ruffPath": "C:/Users/nikhi/miniconda3/envs/f1-warehouse/Scripts/ruff.exe"
+    },
+  },
+  "folders": [
+    {
+      "path": ".",
+    }
+  ],
+}

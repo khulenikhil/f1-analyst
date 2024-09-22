@@ -1,0 +1,19 @@
+[tool.ruff]
+select = [
+    "E",  # PEP8 rules (some overlap with Google Python Style Guide)
+    "F",  # pyflakes rules (for unused imports, etc.)
+    "I",  # import sorting rules
+    "ANN",  # Type annotations
+    "RUF",  # Ruff-specific rules
+    "Q",  # Quotes - Google requires double quotes
+]
+
+ignore = [
+    # E203: Whitespace before ':', Google's style uses this.
+    "E203",
+]
+
+line-length = 80
+
+[tool.ruff.isort]
+profile = "google"

@@ -1,0 +1,35 @@
+services:
+  minio:
+    image: quay.io/minio/minio
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio-volume:/data
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: admin@1234
+
+  jupyter:
+    build: jupyter
+    ports:
+      - 8888:8888
+    volumes:
+      - ./jupyter:/notebooks
+      - ~/.jupyter:/root/.jupyter
+
+  warehouse:
+    image: postgres:16
+    ports:
+      - 5433:5432
+    volumes:
+      - warehouse-volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=warehouse
+      - POSTGRES_USER=warehouse
+      - POSTGRES_DB=warehouse
+
+volumes:
+  minio-volume:
+  warehouse-volume:
